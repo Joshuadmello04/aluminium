@@ -8,7 +8,7 @@ const Hero = () => {
           whileInView={{ opacity: 1,y:0 }}
           initial={{ opacity: 0,y:-20 }}
           transition={{ duration: 1 }}
-          className="py-8 my-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12"
+          className="pt-8 my-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12"
         >
           <a 
             href="/" 
