@@ -122,23 +122,21 @@ const Visual1 = () => {
                 },
             };
 
-
             return (
                 <motion.div
-    className="p-4 mt-6 h-auto max-w-full mx-auto rounded-lg shadow-lg bg-black bg-opacity-60 overflow-x-auto"
-    whileInView={{ opacity: 1, x: 0 }}
-    initial={{ opacity: 0, scale: 0.9 }}
-    animate={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 0.5 }}
->
-    <div className="sm:min-w-[400px] md:min-w-[500px] lg:min-w-full">
-        <Line data={chartData} options={options} />
-    </div>
-</motion.div>
-
-
+                    className="p-4 mt-6 h-auto max-w-full mx-auto rounded-lg shadow-lg bg-black bg-opacity-60 overflow-x-auto"
+                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <div className="sm:min-w-[400px] md:min-w-[500px] lg:min-w-full">
+                        <Line data={chartData} options={options} />
+                    </div>
+                </motion.div>
             );
         }
+
         return (
             <p className="my-4 text-lg font-semibold text-center text-white">
                 Please select both input and output parameters to generate the chart.
@@ -189,7 +187,6 @@ const Visual1 = () => {
                 {renderChart()}
             </div>
         </motion.div>
-
     );
 };
 

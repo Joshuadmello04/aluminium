@@ -1,16 +1,28 @@
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { motion } from 'framer-motion'
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { motion } from 'framer-motion';
+
 
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-]
+  { name: 'Hero', href: '#hero', current: true },
+  { name: 'Graphs', href: '#visuals', current: false },
+  { name: 'Team', href: '#team', current: false },
+];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
+
+function scrollToSection(event, id) {
+  event.preventDefault();
+  const targetElement = document.querySelector(id); // Select the element with the ID
+  if (targetElement) {
+    targetElement.scrollIntoView({ behavior: 'smooth' }); // Scroll smoothly to it
+  } else {
+    console.error(`Element with id ${id} not found.`);
+  }
+}
+
 
 export default function Navbar() {
   return (
@@ -57,6 +69,7 @@ export default function Navbar() {
                     whileInView={{ opacity: 1, x: 0 }}
                     initial={{ opacity: 0, x: 60 }}
                     transition={{ duration: 0.3 }}
+                    onClick={(e) => scrollToSection(e, item.href)}
                   >
                     {item.name}
                   </motion.a>
@@ -84,6 +97,7 @@ export default function Navbar() {
                   item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                   'block rounded-md px-3 py-2 text-base font-medium md:mr-3 sm:mr-1',
                 )}
+                onClick={(e) => scrollToSection(e, item.href)}
               >
                 {item.name}
               </DisclosureButton>
@@ -92,5 +106,5 @@ export default function Navbar() {
         </div>
       </DisclosurePanel>
     </Disclosure>
-  )
+  );
 }
