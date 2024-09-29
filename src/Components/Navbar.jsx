@@ -6,7 +6,6 @@ import { motion } from 'framer-motion';
 const navigation = [
   { name: 'Hero', href: '#hero', current: true },
   { name: 'Graphs', href: '#visuals', current: false },
-  { name: 'Team', href: '#team', current: false },
 ];
 
 function classNames(...classes) {

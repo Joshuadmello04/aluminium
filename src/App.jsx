@@ -3,7 +3,6 @@ import Footer from './Components/Footer';
 import Hero from './Components/Hero';
 import Visuals from './Components/Visual1';
 import Navbar from './Components/Navbar';
-import Team from './Components/Team';
 
 function App() {
   return (
@@ -12,7 +11,6 @@ function App() {
       <Navbar />
       <Hero id="hero" />  {/* Pass id as prop */}
       <Visuals id="visuals" />  {/* Pass id as prop */}
-      <Team id="team" />  {/* Pass id as prop */}
       <Footer />
     </div>
   );
